@@ -1,7 +1,7 @@
 ﻿"use client";
-import {cn} from "@/util/mouse";
-import {motion, AnimatePresence} from "framer-motion";
-import React, {useRef, useState, useEffect} from "react";
+import { cn } from "@/util/mouse";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
 
 export const BackgroundBeamsWithCollision = ({
                                                  children,
@@ -67,8 +67,7 @@ export const BackgroundBeamsWithCollision = ({
     ];
 
     return (
-        <div ref={parentRef}
-             className={cn("h-screen bg-gradient-to-b from-black dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden", className)}>
+        <div ref={parentRef} className={cn("relative w-full h-full overflow-auto", className)}>
             {beams.map((beam) => (
                 <CollisionMechanism
                     key={beam.initialX + "beam-idx"}
@@ -108,7 +107,7 @@ const CollisionMechanism = React.forwardRef<
             repeatDelay?: number;
         };
     }
->(({parentRef, containerRef, beamOptions = {}}, ref) => {
+>(({ parentRef, containerRef, beamOptions = {} }, ref) => {
     const beamRef = useRef<HTMLDivElement>(null);
     const [collision, setCollision] = useState<{
         detected: boolean;
@@ -157,7 +156,7 @@ const CollisionMechanism = React.forwardRef<
     useEffect(() => {
         if (collision.detected && collision.coordinates) {
             setTimeout(() => {
-                setCollision({detected: false, coordinates: null});
+                setCollision({ detected: false, coordinates: null });
                 setCycleCollisionDetected(false);
             }, 2000);
 
@@ -217,8 +216,8 @@ const CollisionMechanism = React.forwardRef<
 
 CollisionMechanism.displayName = "CollisionMechanism";
 
-const Explosion = ({...props}: React.HTMLProps<HTMLDivElement>) => {
-    const spans = Array.from({length: 20}, (_, index) => ({
+const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
+    const spans = Array.from({ length: 20 }, (_, index) => ({
         id: index,
         initialX: 0,
         initialY: 0,
@@ -229,22 +228,22 @@ const Explosion = ({...props}: React.HTMLProps<HTMLDivElement>) => {
     return (
         <div {...props} className={cn("absolute z-50 h-2 w-2", props.className)}>
             <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                exit={{opacity: 0}}
-                transition={{duration: 1.5, ease: "easeOut"}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
                 className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-sm"
             ></motion.div>
             {spans.map((span) => (
                 <motion.span
                     key={span.id}
-                    initial={{x: span.initialX, y: span.initialY, opacity: 1}}
+                    initial={{ x: span.initialX, y: span.initialY, opacity: 1 }}
                     animate={{
                         x: span.directionX,
                         y: span.directionY,
                         opacity: 0,
                     }}
-                    transition={{duration: Math.random() * 1.5 + 0.5, ease: "easeOut"}}
+                    transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
                     className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-white-500 to-blue-400-500"
                 />
             ))}
