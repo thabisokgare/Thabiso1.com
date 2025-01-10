@@ -3,11 +3,12 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import React from "react";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "ThabisoKgare.com",
+    template: "%s | TK.com",
   },
   description: "Co-founder of unkey.dev and founder of planetfall.io",
   openGraph: {
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/favicon1.png",
   },
 };
 const inter = Inter({
