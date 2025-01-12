@@ -59,19 +59,22 @@ export default function Home() {
                     Download my  CV
                 </a>
             </div>
-            <section className="mt-16 text-center animate-fade-in">
-                <h2 className="text-xl font-semibold text-zinc-500">Skills</h2>
-                <ul className="flex flex-wrap justify-center gap-4 mt-4">
-                    {skills.map((skill) => (
-                        <li
-                            key={skill}
-                            className="px-4 py-2 text-sm font-medium text-zinc-800 bg-zinc-300 rounded-lg"
-                        >
-                            {skill}
-                        </li>
-                    ))}
-                </ul>
-            </section>
+           <section className="mt-16 text-center animate-fade-in">
+  <h2 className="text-xl font-semibold text-zinc-500">Skills</h2>
+  <div className="mt-4 max-h-60 overflow-y-auto">
+    <ul className="flex flex-wrap justify-center gap-4">
+      {skills.map((skill) => (
+        <li
+          key={skill}
+          className="px-4 py-2 text-sm font-medium text-zinc-800 bg-zinc-300 rounded-lg shadow-md cursor-pointer transition-transform transform hover:scale-105 hover:bg-zinc-400 active:scale-95"
+          onClick={() => alert(`You clicked on ${skill}`)}
+        >
+          {skill}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
         </div>
     );
 }
