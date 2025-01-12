@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description: "Co-founder of unkey.dev and founder of planetfall.io",
   openGraph: {
-    title: "chronark.com",
+    title: "ThabisoKgare.com",
     description:
       "Co-founder of unkey.dev and founder of planetfall.io",
     url: "https://chronark.com",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "Thxbi_r",
     card: "summary_large_image",
   },
   icons: {
