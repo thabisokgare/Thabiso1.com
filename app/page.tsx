@@ -59,7 +59,7 @@ export default function Home() {
                     Download my  CV
                 </a>
             </div>
-            <section className="mt-16 text-center animate-fade-in">
+            <div className="mt-16 text-center animate-fade-in">
                 <h2 className="text-xl font-semibold text-zinc-500">Skills</h2>
                 <ul className="flex flex-wrap justify-center gap-4 mt-4">
                     {skills.map((skill) => (
@@ -71,7 +71,7 @@ export default function Home() {
                         </li>
                     ))}
                 </ul>
-            </section>
+            </div>
         </div>
     );
 }
