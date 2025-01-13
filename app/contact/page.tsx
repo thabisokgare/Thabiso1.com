@@ -1,27 +1,29 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
+import {Github, Linkedin, Mail} from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
+import Particles from "@/app/components/particles";
+import React from "react";
 
 const socials = [
 	{
-		icon: <Twitter size={20} />,
-		href: "https://twitter.com/thxbi_r",
-		label: "Twitter",
-		handle: "@thxbi_r",
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/thabiso-kgare/",
+		label: "Linkedin",
+		handle: "ThabisoKgare",
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "Thabisoryan8@gmail.com",
+		href: "",
 		label: "Email",
-		handle: "dev@thabisoryan8@gmail.com",
+		handle: "thabisoryan8@gmail.com",
 	},
 	{
 		icon: <Github size={20} />,
 		href: "https://github.com/thabisokgare",
 		label: "Github",
-		handle: "Thabiso"
+		handle: "Thabisokgare"
 	},
 ];
 
@@ -30,6 +32,10 @@ export default function Example() {
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
+				<Particles
+					className="absolute inset-0 -z-10 animate-fade-in"
+					quantity={100}
+				/>
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
 						<Card>
