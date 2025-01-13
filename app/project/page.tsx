@@ -11,9 +11,9 @@ export default function Example() {
     return (
         <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen overflow-auto">
             <Navigation />
-            <BackgroundBeamsWithCollision>
-                <div className="flex items-center justify-center min-h-screen px-4 mx-auto pt-24 sm:pt-12 overflow-auto">
-                    <div className="flex flex-wrap justify-center w-full gap-8 mx-auto mt-32 sm:mt-0 lg:gap-16">
+
+                <section className="flex items-center justify-center min-h-screen px-4 mx-auto pt-24 sm:pt-12 overflow-auto">
+                    <section className="flex flex-wrap justify-center w-full gap-8 mx-auto mt-32 sm:mt-0 lg:gap-16">
                         {projects.map((project) => (
                             <CardContainer key={project.id} className="inter-var">
                                 <CardBody
@@ -44,9 +44,9 @@ export default function Example() {
                                 </CardBody>
                             </CardContainer>
                         ))}
-                    </div>
-                </div>
-            </BackgroundBeamsWithCollision>
+                    </section>
+                </section>
+
         </div>
     );
 }

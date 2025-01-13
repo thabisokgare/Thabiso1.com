@@ -10,16 +10,16 @@ export const metadata: Metadata = {
     default: "ThabisoKgare.com",
     template: "%s | TK.com",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Founder of Neosave a Financial Investment and budget app power by AI",
   openGraph: {
     title: "ThabisoKgare.com",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
+      "Founder of Neosave a financial Investement and budget app",
+    url: "https://thabiso-ten.vercel.app/",
     siteName: "chronark.com",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "",
         width: 1920,
         height: 1080,
       },
