@@ -59,13 +59,15 @@ export default function Home() {
                     Download my  CV
                 </a>
             </div>
-            <section className="mt-16 text-center animate-fade-in">
+            <section className="mt-16 text-center animate-fade-in group">
                 <h2 className="text-xl font-semibold text-zinc-500">Skills</h2>
                 <ul className="flex flex-wrap justify-center gap-4 mt-4">
-                    {skills.map((skill) => (
+                    {skills.map((skill, index) => (
                         <li
                             key={skill}
-                            className="px-4 py-2 text-sm font-medium text-zinc-800 bg-zinc-300 rounded-lg"
+                            className={`px-4 py-2 text-sm font-medium text-zinc-800 bg-zinc-300 rounded-lg transform opacity-0 transition-all duration-500 ease-in-out delay-${
+                                index * 100
+                            } group-hover:opacity-100 group-hover:translate-y-0`}
                         >
                             {skill}
                         </li>
