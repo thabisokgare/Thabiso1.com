@@ -5,6 +5,7 @@ import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import Particles from "@/app/components/particles";
 import React from "react";
+import Footer from "@/app/components/Footer";
 
 const socials = [
 	{
@@ -64,6 +65,8 @@ export default function Example() {
 					))}
 				</div>
 			</div>
+			<Footer />
 		</div>
+
 	);
 }

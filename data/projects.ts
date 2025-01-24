@@ -21,7 +21,8 @@
         description: "A website for the World Food Organisation to increase awareness and engagement, developed using HTML, CSS, and JavaScript.",
         image: "/images/freepik__comic-art-graphic-novel-art-comic-illustration-hig__21281.jpeg",
         category: "Web Development",
-        status: "Completed"
+        status: "Completed",
+        link: "https://www.world-food-organisation-website.com/"
     },
 
 
@@ -31,7 +32,8 @@
         description: "A metaverse prototype allowing users to explore different virtual worlds, created without backend or 3D objects.",
         image: "/images/7325591.jpg",
         category: "Virtual Reality",
-        status: "Completed"
+        status: "Completed",
+        link: "https://www.world-food-organisation-website.com/"
     },
 
     {

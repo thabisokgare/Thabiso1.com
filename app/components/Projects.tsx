@@ -1,26 +1,24 @@
-﻿"use client";
-
-import Image from "next/image";
-import React from "react";
-import { projects } from "@/data/projects"; // Import projects data
-import { CardBody, CardContainer, CardItem } from "@/app/components/3d-cards";
-import Link from "next/link";
-import {Navigation} from "@/app/components/nav";
+﻿import React from 'react';
 import Particles from "@/app/components/particles";
-import Footer from "@/app/components/Footer";
+import { projects } from "@/data/projects";
+import { CardBody, CardContainer, CardItem } from "@/app/components/3d-cards";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function ProjectsPage() {
+const Projects = () => {
     return (
-        <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 min-h-screen overflow-auto">
-            <Navigation />
-            <section className="flex flex-wrap justify-center w-full gap-8 mx-auto mt-32 lg:gap-16 px-4">
-                <Particles
-                    className="absolute inset-0 -z-10 animate-fade-in"
-                    quantity={100}
-                />
+        <section className="mt-32 text-center animate-fade-in group">
+            <Particles
+                className="absolute inset-0 -z-10 animate-fade-in"
+                quantity={100}
+            />
+            <h2 className="text-xl font-semibold text-zinc-500">Projects</h2>
+
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto px-4 max-w-7xl">
                 {projects.map((project) => (
                     <CardContainer key={project.id} className="inter-var">
-                        <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+                        <CardBody className="bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
                             {/* Project Title */}
                             <CardItem
                                 translateZ="50"
@@ -54,11 +52,11 @@ export default function ProjectsPage() {
                                 <CardItem
                                     translateZ={20}
                                     as={Link}
-                                    href="https://github.com/thabisokgare"
+                                    href={project.link || "#"}
                                     target="__blank"
-                                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white hover:underline"
                                 >
-                                    Learn more →
+                                    view  →
                                 </CardItem>
                                 <CardItem
                                     translateZ={20}
@@ -71,8 +69,9 @@ export default function ProjectsPage() {
                         </CardBody>
                     </CardContainer>
                 ))}
-            </section>
-            <Footer />
-        </div>
+            </div>
+        </section>
     );
-}
+};
+
+export default Projects;
